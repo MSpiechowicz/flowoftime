@@ -1,0 +1,34 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
+@import "tailwindcss";
+
+:root {
+  font-family: "Nunito", sans-serif;
+  /*line-height: 1.5;*/
+  /*font-weight: 400;*/
+
+  /*font-synthesis: none;*/
+  /*text-rendering: optimizeLegibility;*/
+  /*-webkit-font-smoothing: antialiased;*/
+  /*-moz-osx-font-smoothing: grayscale;*/
+
+  /*--color-primary: #D72638;*/
+  /*--color-header: #1F2937;*/
+}
+
+html,
+body {
+  background-color: #f3f4f6;
+  /*color: black;*/
+}
+
+@theme {
+  --color-primary: #d72638;
+  --color-primary-hover: #b71c2a;
+  --color-header: #1f2937;
+  --color-body: #4B5563;
+  --color-border: #D1D5DB;
+  --color-input-hover: #E5E7EB;
+  --color-input-focus-shadow: 0 0 0 3px rgba(215, 38, 56, 0.3);
+}
