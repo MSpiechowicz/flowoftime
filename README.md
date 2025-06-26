@@ -6,11 +6,16 @@ We all have our limited time on earth as a human being, so each second matters. 
 
 ## Technical Stack
 
-This project use below libraries
+This project use below libraries:
 
 - Svelte 5
 - Tailwind 4
 - Vite
+
+On top of that I used the non-commercial SVG from publicly available pages:
+
+- [SVG repo](https://www.svgrepo.com/)
+- [Tabler](https://tabler.io/icons)
 
 ## How can I run it?
 
