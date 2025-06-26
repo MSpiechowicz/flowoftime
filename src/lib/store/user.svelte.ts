@@ -1,4 +1,5 @@
 export const userStore = $state({
+  started: false,
   country: "Germany",
   gender: "female",
   age: 35,
@@ -25,5 +26,8 @@ export const userStore = $state({
   },
   setSecondsRemaining: (secondsRemaining: number) => {
     userStore.secondsRemaining = secondsRemaining;
-  }
+  },
+  setStarted: (started: boolean) => {
+    userStore.started = started;
+  },
 });

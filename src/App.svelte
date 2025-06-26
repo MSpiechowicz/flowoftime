@@ -1,8 +1,9 @@
 <script>
-  import AppHeader from './lib/components/AppHeader.svelte';
-  import AppHearthAnimation from './lib/components/AppHearthAnimation.svelte';
-  import AppUserInput from './lib/components/AppUserInput.svelte';
-  import AppUserLifespan from './lib/components/AppUserLifespan.svelte';
+  import AppHeader from "./lib/components/AppHeader.svelte";
+  import AppHearthAnimation from "./lib/components/AppHearthAnimation.svelte";
+  import AppUserInput from "./lib/components/AppUserInput.svelte";
+  import AppUserLifespan from "./lib/components/AppUserLifespan.svelte";
+  import { userStore } from "./lib/store/user.svelte";
 
   let age = 0;
   let lifeExpectancy = 0;
@@ -19,12 +20,17 @@
 <main class="app-flow-of-time">
   <AppHeader />
   <AppUserInput />
-  <div class="flex flex-col items-center justify-center gap-4 mt-14 max-w-lg mx-auto">
-    <h2 class="text-2xl font-bold text-primary">Your Lifespan Snapshot</h2>
-    <p class="text-body text-center">All of the data are calculated based on the average lifespan of the country you selected. More detail about how it is calculated can be found at the project repository.</p>
-    <div class="flex flex-row items-center justify-center gap-10 mt-4">
-      <AppHearthAnimation />
-      <AppUserLifespan />
+  {#if userStore.started}
+    <div class="flex flex-col items-center justify-center gap-4 mt-14 max-w-lg mx-auto">
+      <h2 class="text-3xl font-bold text-primary">Your Lifespan Snapshot</h2>
+      <p class="text-body text-center">
+        All of the data are calculated based on the average lifespan of the country you selected. More detail about how
+        it is calculated can be found at the project repository.
+      </p>
+      <div class="flex flex-row items-center justify-center gap-10 mt-4">
+        <AppHearthAnimation />
+        <AppUserLifespan />
+      </div>
     </div>
-  </div>
+  {/if}
 </main>

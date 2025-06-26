@@ -14,6 +14,7 @@
     userStore.setLifeExpectancy(lifeExpectancy);
     userStore.setGender(gender?.value);
     userStore.setCountry(country?.value);
+    userStore.setStarted(true);
   }
 
   let showDropdown = false;
@@ -60,7 +61,7 @@
           class="border border-border rounded-lg p-2 bg-white w-full h-10 appearance-none cursor-pointer"
           id="age"
           type="number"
-          bind:value={userStore.age}
+          value={userStore.age}
           min="1"
           max="120"
         />
@@ -73,7 +74,7 @@
         <select
           class="border border-border rounded-lg w-full h-10 bg-white appearance-none px-2 cursor-pointer form-select bg-no-repeat"
           id="gender"
-          bind:value={userStore.gender}
+          value={userStore.gender}
         >
           <option selected value="female">Female</option>
           <option value="male">Male</option>
@@ -89,7 +90,7 @@
           id="country"
           type="text"
           placeholder="Select country"
-          bind:value={searchValue}
+          value={searchValue}
           on:input={handleSearch}
           on:focus={handleInputFocus}
           on:blur={handleInputBlur}
