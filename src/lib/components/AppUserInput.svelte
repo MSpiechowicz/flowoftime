@@ -1,6 +1,9 @@
 <script lang="ts">
   import { getCountries, getLifeExpectancy } from "../lifespan";
   import { userStore } from "../store/user.svelte";
+  import IconUserHeart from "../svg/IconUserHeart.svelte";
+  import IconUserPin from "../svg/IconUserPin.svelte";
+  import IconUserQuestion from "../svg/IconUserQuestion.svelte";
 
   //  export let age = 30;
   //  export let gender = "female";
@@ -49,13 +52,16 @@
   }
 </script>
 
-<div class="flex flex-col items-center justify-center gap-4 mt-14">
+<div class="flex flex-col items-center justify-center gap-4 mt-14 max-w-lg mx-auto">
   <form on:submit|preventDefault={handleSubmit} class="flex flex-col items-center justify-center">
-    <div class="flex flex-row items-center justify-center border border-border rounded-lg p-4 gap-4">
+    <div class="grid grid-cols-3 gap-4 border border-border rounded-lg p-4">
       <div class="flex flex-col gap-1">
-        <label class="text-body" for="age">Age</label>
+        <div class="flex flex-row items-center justify-start gap-1.5">
+          <IconUserHeart customClass="w-5 h-5" customColor="#4B5563" />
+          <label class="text-body" for="age">Age </label>
+        </div>
         <input
-          class="border border-border rounded-lg p-2 bg-white w-30 h-10 appearance-none"
+          class="border border-border rounded-lg p-2 bg-white w-full h-10 appearance-none cursor-pointer"
           id="age"
           type="number"
           bind:value={userStore.age}
@@ -64,9 +70,12 @@
         />
       </div>
       <div class="flex flex-col gap-1">
-        <label class="text-body" for="gender">Gender</label>
+        <div class="flex flex-row items-center justify-start gap-1.5">
+          <IconUserQuestion customClass="w-5 h-5" customColor="#4B5563" />
+          <label class="text-body" for="gender">Gender</label>
+        </div>
         <select
-          class="border border-border rounded-lg w-30 h-10 bg-white hover:bg-input-hover appearance-none px-2"
+          class="border border-border rounded-lg w-full h-10 bg-white appearance-none px-2 cursor-pointer form-select bg-no-repeat"
           id="gender"
           bind:value={userStore.gender}
         >
@@ -75,12 +84,15 @@
         </select>
       </div>
       <div class="flex flex-col gap-1 relative">
-        <label class="text-body" for="country">Country</label>
+        <div class="flex flex-row items-center justify-start gap-1.5">
+          <IconUserPin customClass="w-5 h-5" customColor="#4B5563" />
+          <label class="text-body" for="country">Country</label>
+        </div>
         <input
-          class="border border-border rounded-lg p-2 bg-white w-40 h-10 appearance-none"
+          class="border border-border rounded-lg p-2 bg-white w-full h-10 appearance-none cursor-pointer form-select bg-no-repeat"
           id="country"
           type="text"
-          placeholder="Search country..."
+          placeholder="Select country"
           bind:value={searchValue}
           on:input={handleSearch}
           on:focus={handleInputFocus}
