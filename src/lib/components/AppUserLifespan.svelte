@@ -18,11 +18,9 @@
   // Recalculate death date when user data changes
   $effect(() => {
     if (userStore.lifeExpectancy > 0 && userStore.age < userStore.lifeExpectancy) {
-      const now = new Date();
       const yearsRemaining = userStore.lifeExpectancy - userStore.age;
-      const calculatedDeathDate = new Date(now.getTime());
-      calculatedDeathDate.setFullYear(now.getFullYear() + yearsRemaining);
-      deathDate = calculatedDeathDate.getTime();
+      const millisecondsRemaining = yearsRemaining * 365.25 * 24 * 60 * 60 * 1000;
+      deathDate = Date.now() + millisecondsRemaining;
     } else {
       deathDate = 0;
     }

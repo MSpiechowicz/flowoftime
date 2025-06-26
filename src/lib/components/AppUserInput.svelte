@@ -5,10 +5,6 @@
   import IconUserPin from "../svg/IconUserPin.svelte";
   import IconUserQuestion from "../svg/IconUserQuestion.svelte";
 
-  //  export let age = 30;
-  //  export let gender = "female";
-  //  export let country = "";
-
   async function handleSubmit(event) {
     const { age, country, gender } = event.target;
 
