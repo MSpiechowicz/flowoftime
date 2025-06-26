@@ -7,12 +7,14 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist",
     "dev:docker:build": "docker build -t flowoftime .",
-    "dev:docker:run": "docker run -p 4173:4173 flowoftime",
-    "preview": "vite preview"
+    "dev:docker:run": "docker run -p 4173:4173 flowoftime"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^5.0.3",
+    "gh-pages": "^6.3.0",
     "svelte": "^5.28.1",
     "vite": "^6.3.5"
   },
