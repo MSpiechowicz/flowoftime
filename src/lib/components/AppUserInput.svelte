@@ -52,7 +52,7 @@
 
 <div class="flex flex-col items-center justify-center gap-4 mt-14 max-w-lg mx-auto">
   <form on:submit|preventDefault={handleSubmit} class="flex flex-col items-center justify-center">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border border-border rounded-lg p-4">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border border-border rounded-lg p-4 shadow-md">
       <div class="flex flex-col gap-1">
         <div class="flex flex-row items-center justify-start gap-1.5">
           <IconUserHeart customClass="w-5 h-5" customColor="#4B5563" />
@@ -117,7 +117,7 @@
       </div>
     </div>
 
-    <button class="w-full bg-primary hover:bg-primary-hover rounded-lg p-2 text-white h-10 mt-4" type="submit"
+    <button class="w-full bg-primary hover:bg-primary-hover rounded-lg p-2 text-white h-10 mt-4 shadow-md" type="submit"
       >Start the Clock!</button
     >
   </form>
