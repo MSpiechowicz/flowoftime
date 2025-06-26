@@ -12,11 +12,9 @@ export const userStore = $state({
   },
   setAge: (age: number) => {
     userStore.age = age;
-    userStore.calculate();
   },
   setLifeExpectancy: (lifeExpectancy: number) => {
     userStore.lifeExpectancy = lifeExpectancy;
-    userStore.calculate();
   },
   setCountry: (country: string) => {
     userStore.country = country;

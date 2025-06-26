@@ -15,13 +15,14 @@
     userStore.setGender(gender?.value);
     userStore.setCountry(country?.value);
     userStore.setStarted(true);
+    userStore.calculate();
   }
 
   let showDropdown = false;
   let searchValue = userStore.country;
   let filteredCountries = [];
 
-  async function handleSearch(event) {
+  function handleSearch(event) {
     const { value } = event.target;
     searchValue = value;
     const countries = getCountries();
@@ -95,6 +96,7 @@
           on:focus={handleInputFocus}
           on:blur={handleInputBlur}
           autocomplete="off"
+          required
         />
 
         {#if showDropdown && filteredCountries.length > 0}
