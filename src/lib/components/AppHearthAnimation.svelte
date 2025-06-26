@@ -10,7 +10,7 @@
 
 <div class="flex items-center justify-center">
     {#key currentTime}
-	<svg class="w-50 h-50" viewBox="0 0 1097 609" xmlns="http://www.w3.org/2000/svg">
+	<svg class="w-50 h-full" viewBox="0 0 950 600" xmlns="http://www.w3.org/2000/svg">
 		<path
 			d={pathData}
 			stroke="#d72638"
