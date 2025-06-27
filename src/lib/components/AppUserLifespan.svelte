@@ -74,7 +74,7 @@
   {#each lifespanInfo as info}
     {#if info.visible}
       <div class="flex flex-row items-center justify-start gap-2">
-        <IconPinned customClass="w-6 h-6" customColor="#4B5563" />
+        <IconPinned customClass="min-w-6 min-h-6" customColor="#4B5563" />
         <div class="flex flex-col items-start justify-start">
           <p class="text-lg text-body">{info.label}</p>
           <p class="text-lg text-body font-bold">{info.value}</p>

@@ -1,4 +1,4 @@
-<header class="flex flex-col items-center justify-center gap-4 text-center mt-14">
+<header class="flex flex-col items-center justify-center gap-4 text-center">
   <h1 class="mb-4 text-4xl md:text-5xl font-bold text-primary">The Flow of Time</h1>
   <div class="flex flex-col items-center justify-center gap-2">
     <p class="text-xl text-gray-700 italic">Each moment is a new beginning.</p>

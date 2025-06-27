@@ -7,7 +7,7 @@
   import { userStore } from "./lib/store/user.svelte";
 </script>
 
-<main class="app-flow-of-time">
+<main class="my-6 md:my-14">
   <AppHeader />
   <AppUserInput />
   {#if userStore.started}
@@ -18,12 +18,12 @@
         how it is calculated can be found at the project <a href="https://github.com/MSpiechowicz/flowoftime" target="_blank" class="text-body underline underline-offset-4 font-bold">repository</a>.
       </p>
       {#if userStore.age > userStore.lifeExpectancy}
-        <div class="flex flex-col md:flex-row items-center justify-center gap-10 mt-4 mb-12 md:mb-0">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-10 mt-4">
           <AppUserOverLifespan />
           <AppUserLifespan />
         </div>
       {:else}
-        <div class="flex flex-col md:flex-row items-center justify-center gap-10 mt-8 mb-12 md:mt-4 md:mb-0">
+        <div class="flex flex-col md:flex-row items-center justify-center gap-10 mt-8 md:mt-4">
           <AppHearthAnimation />
           <AppUserLifespan />
         </div>
