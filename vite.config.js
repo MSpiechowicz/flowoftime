@@ -6,4 +6,8 @@ import { defineConfig } from "vite";
 export default defineConfig({
   plugins: [svelte(), tailwindcss()],
   base: "/flowoftime/",
+  test: {
+    globals: true,
+    environment: 'jsdom',
+  }
 });

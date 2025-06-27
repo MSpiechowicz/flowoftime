@@ -1,6 +1,8 @@
 <script lang="ts">
   import { userStore } from "../store/user.svelte";
   import IconPinned from "../svg/IconPinned.svelte";
+  import { getDeathDate } from "../utils/getDeathDate";
+  import { isSingularOrPlural } from "../utils/isSingularOrPlural";
 
   // Real-time seconds calculation
   let currentTime = $state(Date.now());
@@ -18,28 +20,18 @@
   // Recalculate death date when user data changes
   $effect(() => {
     if (userStore.lifeExpectancy > 0 && userStore.age < userStore.lifeExpectancy) {
-      const yearsRemaining = userStore.lifeExpectancy - userStore.age;
-      const millisecondsRemaining = yearsRemaining * 365.25 * 24 * 60 * 60 * 1000;
-      deathDate = Date.now() + millisecondsRemaining;
+      deathDate = getDeathDate(userStore.age, userStore.lifeExpectancy);
     } else {
       deathDate = 0;
     }
   });
 
-  // Calculate seconds remaining in real time
-  const secondsRemaining = $derived(deathDate > 0 ? Math.max(0, (deathDate - currentTime) / 1000) : 0);
-
   $effect(() => {
     userStore.setSecondsRemaining(secondsRemaining);
   });
 
-  function isSingularOrPlural(value: number, singular: string, plural: string) {
-    if (value > 0 && value < 2) {
-      return singular;
-    } else {
-      return plural;
-    }
-  }
+  // Calculate seconds remaining in real time
+  const secondsRemaining = $derived(deathDate > 0 ? Math.max(0, (deathDate - currentTime) / 1000) : 0);
 
   const lifeExpectancyText = $derived(
     `${userStore.lifeExpectancy.toFixed(0)} ${isSingularOrPlural(userStore.lifeExpectancy, "year", "years")}`
