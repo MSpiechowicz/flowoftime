@@ -1,4 +1,5 @@
 <script>
+  import { fly } from "svelte/transition";
   import AppHeader from "./lib/components/AppHeader.svelte";
   import AppHearthAnimation from "./lib/components/AppHearthAnimation.svelte";
   import AppUserInput from "./lib/components/AppUserInput.svelte";
@@ -11,7 +12,10 @@
   <AppHeader />
   <AppUserInput />
   {#if userStore.started}
-    <div class="flex flex-col items-center justify-center gap-4 px-4 md:px-0 mt-14 max-w-lg mx-auto">
+    <div
+      transition:fly={{ y: 20, duration: 800, delay: 100 }}
+      class="flex flex-col items-center justify-center gap-4 px-4 md:px-0 mt-14 max-w-lg mx-auto"
+    >
       <h2 class="text-3xl font-semibold text-primary">Your Lifespan Snapshot</h2>
       <p class="text-body text-center">
         All of the data are calculated based on the average lifespan of the country you selected. More detail about
